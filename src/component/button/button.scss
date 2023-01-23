@@ -1,0 +1,12 @@
+@use '../../styles/tokens' as *;
+
+.Button {
+  border-radius: $BORDER-RADIUS;
+  border: 0;
+  padding: $SPACE-2 $SPACE-3;
+  text-transform: uppercase;
+  font-size: $FONT-SIZE-2;
+  line-height: ($FONT-SIZE-2 + 1);
+  cursor: pointer;
+  background: transparent;
+}

@@ -1,0 +1,13 @@
+.CheckBox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.CheckBox input {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=checkbox.css.map */
