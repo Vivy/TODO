@@ -8,6 +8,7 @@ type ButtonType = {
   transparent?: boolean;
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  type?: 'button' | 'submit';
 };
 export const Button = ({
   children,
@@ -15,6 +16,7 @@ export const Button = ({
   transparent,
   secondary,
   onClick,
+  type = 'button',
 }: ButtonType) => {
   const classNames = ['Button'];
 
@@ -31,7 +33,7 @@ export const Button = ({
   }
 
   return (
-    <button onClick={onClick} type='button' className={classNames.join(' ')}>
+    <button type={type} onClick={onClick} className={classNames.join(' ')}>
       {children}
     </button>
   );

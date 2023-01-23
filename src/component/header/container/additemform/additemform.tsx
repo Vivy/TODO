@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { FormEventHandler, useState } from 'react';
+import { useAutoFocus } from '../../../../customhooks/useautofocus';
 import Button from '../../../button/button';
 import TextField from '../../../textfield/textfield';
 
@@ -7,26 +8,33 @@ type AddToDoItemType = {
 };
 
 const AddToDoItem = ({ onAddClicked }: AddToDoItemType) => {
+  const inputFieldRef = useAutoFocus();
+
   const [task, setTask] = useState<string>('');
 
   const onTaskFieldChanges = (value: any) => {
     setTask(value);
   };
 
-  const onClickAdd = () => {
+  const onFormSubmitted: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
     onAddClicked(task);
     setTask('');
   };
 
   return (
     <>
-      <form action=''>
+      <form onSubmit={onFormSubmitted}>
         <div className='flex'>
           <div className='flex-grow-1 mr-2'>
-            <TextField value={task} onInput={onTaskFieldChanges} />
+            <TextField
+              ref={inputFieldRef}
+              value={task}
+              onInput={onTaskFieldChanges}
+            />
           </div>
           <div>
-            <Button onClick={onClickAdd} primary>
+            <Button type='submit' primary>
               Add
             </Button>
           </div>
