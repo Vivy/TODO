@@ -13,12 +13,12 @@ export const ToDoItem = ({ todo }: ToDoType) => {
       </div>
       <div className='mr-auto mt-auto mb-auto'>{todo}</div>
       <div>
-        <Button>
+        <Button transparent>
           <i className='fa fa-pencil'></i>
         </Button>
       </div>
       <div>
-        <Button>
+        <Button transparent>
           <i className='fa fa-trash'></i>
         </Button>
       </div>

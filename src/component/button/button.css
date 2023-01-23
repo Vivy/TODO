@@ -6,7 +6,27 @@
   font-size: 16px;
   line-height: 17px;
   cursor: pointer;
-  background: transparent;
+}
+
+.Button.Primary {
+  background-color: #2f80ed;
+  color: #ffffff;
+}
+
+.Button.Secondary {
+  background-color: #f2994a;
+  color: #ffffff;
+}
+
+.Button.Disable {
+  background-color: #f2f2f2;
+  color: #333333;
+  opacity: 0.5;
+}
+
+.Button.Transparent {
+  background-color: transparent;
+  color: #333333;
 }
 
 /*# sourceMappingURL=button.css.map */
